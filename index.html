@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rev-Web - Revolutioniere dein Web-Erlebnis</title>
+</head>
+<body>
+    <header>
+        <img src="header-img" alt="header-img" style="width:150px;height:auto;">
+        <h1>Restaurants</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menü</a></li>
+                <li><a href="#auftrag2">Bestellen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <h2>Unsere Speisekarte</h2>
+        <div>
+            <img src="https://tse1.mm.bing.net/th/id/OIP.tzui4_ZqXtkyb3peLmelPgHaKe?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Speisen" style="max-width:200px;">
+            <h3>Speisen</h3>
+        </div>
+        <p>Pizza Margherita – 8,50&nbsp;€</p>
+        <p>Spaghetti Bolognese – 9,00&nbsp;€</p>
+        <p>Caesar Salat – 7,00&nbsp;€</p>
+        <p>Tiramisu – 4,50&nbsp;€</p>
+    </section>
+
+    <section id="auftrag">
+        <h2>Bestellung senden</h2>
+        <p>Jetzt unsere beliebtesten Gerichte genießen – frisch, <br>lecker und direkt zu Ihnen geliefert! Bestellen Sie noch heute und erleben Sie echten Genuss.</p>
+        <form id="auftrag2">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="address">Adresse:</label>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <label for="phone">Telefonnummer:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="ordernum">Bestellnummer:</label>
+            <input type="number" id="ordernum" name="ordernum" min="45" max="60" required><br><br>
+
+            <label>Lieferoptionen:</label>
+            <input type="radio" id="delivery" name="deliveryOption" value="Lieferung" required>
+            <label for="delivery">Lieferung</label>
+            <input type="radio" id="pickup" name="deliveryOption" value="Abholung" required>
+            <label for="pickup">Abholung</label><br><br>
+
+            <label for="order">Extrawünsche:</label>
+            <textarea id="order" name="order" rows="4" cols="50"></textarea><br><br>
+
+            <input type="submit" value="Bestellung absenden">
+        </form>
+    </section>
+
+    <footer>
+        <p>Made with love by. @SkyTheOne</p>
+    </footer>
+</body>
+</html>
