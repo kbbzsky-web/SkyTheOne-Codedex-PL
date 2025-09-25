@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Basis-Setup für Zeichensatz und responsives Layout -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Kurze Seitenbeschreibung für Suchmaschinen -->
+    <meta name="description" content="Frische, leckere Gerichte – schnell geliefert. Entdecke unsere Speisekarte und bestelle direkt online.">
+
+    <!-- Farbe für Browser-UI auf Mobilgeräten -->
+    <meta name="theme-color" content="#0f1221">
+
+    <!-- Titel der Seite im Browser-Tab -->
+    <title>Rev-Web – Revolutioniere dein Web-Erlebnis</title>
+
+    <!-- Schriftarten laden -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon (Platzhalter, kann ersetzt werden) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5c5c'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' fill='%230b0e1a'%3ER%3C/text%3E%3C/svg%3E">
+
+    <!-- Haupt-Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Haupt-Skript -->
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Hinweis, falls JavaScript deaktiviert ist -->
+    <noscript>Bitte aktiviere JavaScript, um alle Funktionen dieser Seite zu nutzen.</noscript>
+
+    <!-- Kopfbereich mit Navigation -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <!-- Marke; Klick führt nach oben -->
+            <a class="brand" href="#start" aria-label="Startseite">
+                <span class="logo">Rev</span><span class="brand-rest">Restaurant</span>
+            </a>
+
+            <!-- Hauptnavigation -->
+            <nav class="main-nav" aria-label="Hauptnavigation">
+                <a href="#menu">Menü</a>
+                <a href="#bestellen">Bestellen</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="start">
+        <!-- Einstiegsbereich mit Bild und Handlungsaufrufen -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <h1>Frisch. Lecker. Direkt zu dir.</h1>
+                    <p>Entdecke unsere beliebtesten Gerichte – liebevoll zubereitet und schnell geliefert.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#bestellen">Jetzt bestellen</a>
+                        <a class="btn btn-ghost" href="#menu">Speisekarte ansehen</a>
+                    </div>
+                </div>
+
+                <!-- Bild des Gerichts; passt sich an die Bildschirmgröße an -->
+                <div class="hero-visual reveal">
+                    <img
+                        class="hero-image"
+                        src="https://tse1.mm.bing.net/th/id/OIP.tzui4_ZqXtkyb3peLmelPgHaKe?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Frisch gebackene Pizza als Appetizer"
+                        loading="lazy"
+                        width="800"
+                        height="800"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Speisekarte mit Kartenlayout -->
+        <section id="menu" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">Unsere Speisekarte</h2>
+
+                <!-- Raster für Speisekarten -->
+                <ul class="menu-grid" role="list">
+                    <li class="menu-card reveal">
+                        <div class="menu-card-inner">
+                            <h3>Pizza Margherita</h3>
+                            <p class="desc">Tomatensauce, Mozzarella, Basilikum – der zeitlose Klassiker.</p>
+                            <span class="price" aria-label="Preis 8 Euro 50">
+                                <data value="8.5">8,50 €</data>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="menu-card reveal">
+                        <div class="menu-card-inner">
+                            <h3>Spaghetti Bolognese</h3>
+                            <p class="desc">Hausgemachte Fleischsauce nach Familienrezept.</p>
+                            <span class="price" aria-label="Preis 9 Euro 00">
+                                <data value="9.0">9,00 €</data>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="menu-card reveal">
+                        <div class="menu-card-inner">
+                            <h3>Caesar Salat</h3>
+                            <p class="desc">Knackiger Römersalat mit Parmesan und Croûtons.</p>
+                            <span class="price" aria-label="Preis 7 Euro 00">
+                                <data value="7.0">7,00 €</data>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="menu-card reveal">
+                        <div class="menu-card-inner">
+                            <h3>Tiramisu</h3>
+                            <p class="desc">Cremiges Dessert mit Espresso und Kakao.</p>
+                            <span class="price" aria-label="Preis 4 Euro 50">
+                                <data value="4.5">4,50 €</data>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Bestellformular -->
+        <section id="bestellen" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title reveal">Bestellung senden</h2>
+                <p class="section-lead reveal">
+                    Jetzt unsere beliebtesten Gerichte genießen – frisch, lecker und direkt zu dir geliefert!
+                    Bestelle noch heute und erlebe echten Genuss.
+                </p>
+
+                <!-- Formular; Validierung über den Browser -->
+                <form id="bestellformular" class="form reveal" action="#" method="post" novalidate>
+                    <!-- Name -->
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+                    </div>
+
+                    <!-- Adresse -->
+                    <div class="form-field">
+                        <label for="address">Adresse</label>
+                        <input type="text" id="address" name="address" placeholder="Musterstraße 1, 12345 Musterstadt" required>
+                    </div>
+
+                    <!-- Telefon -->
+                    <div class="form-field">
+                        <label for="phone">Telefonnummer</label>
+                        <!-- Erlaubt typische Zeichen für Telefonnummern -->
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+49 170 1234567"
+                            pattern="^[0-9 +()\/\-]{6,}$"
+                            required
+                        >
+                        <small class="hint">Nur Ziffern und + ( ) / - sind erlaubt.</small>
+                    </div>
+
+                    <!-- Bestellnummer -->
+                    <div class="form-field">
+                        <label for="orderNumber">Bestellnummer</label>
+                        <input
+                            type="number"
+                            id="orderNumber"
+                            name="orderNumber"
+                            min="45"
+                            max="60"
+                            step="1"
+                            placeholder="z. B. 52"
+                            aria-describedby="orderNumberError"
+                            required
+                        >
+                        <small class="hint">Erlaubter Bereich: 45 bis 60.</small>
+                        <small id="orderNumberError" class="error-text" role="alert" aria-live="polite"></small>
+                    </div>
+
+                    <!-- Lieferoptionen -->
+                    <fieldset class="form-field">
+                        <legend>Lieferoptionen</legend>
+                        <div class="radio-group">
+                            <label class="radio">
+                                <input type="radio" id="delivery" name="deliveryOption" value="Lieferung" required>
+                                <span>Lieferung</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" id="pickup" name="deliveryOption" value="Abholung" required>
+                                <span>Abholung</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Extrawünsche -->
+                    <div class="form-field form-field--full">
+                        <label for="notes">Extrawünsche</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Allergien, ohne Zwiebeln, extra Käse …"></textarea>
+                    </div>
+
+                    <!-- Absenden -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Bestellung absenden</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Benachrichtigungsbereich für Bestätigungen -->
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Fußbereich -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>Made with love by. @SkyTheOne</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <!-- Basis-Setup für Zeichensatz und responsives Layout -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Kurze Seitenbeschreibung für Suchmaschinen -->
-    <meta name="description" content="Frische, leckere Gerichte – schnell geliefert. Entdecke unsere Speisekarte und bestelle direkt online.">
+    <meta name="description" content="Secure file sharing made simple. Upload, organize, and share your files with beautiful cloud-style management.">
 
     <!-- Farbe für Browser-UI auf Mobilgeräten -->
     <meta name="theme-color" content="#0f1221">
 
     <!-- Titel der Seite im Browser-Tab -->
-    <title>Rev-Web – Revolutioniere dein Web-Erlebnis</title>
+    <title>CloudShare – Simple & Secure File Sharing</title>
 
     <!-- Schriftarten laden -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon (Platzhalter, kann ersetzt werden) -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5c5c'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' fill='%230b0e1a'%3ER%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5c5c'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' fill='%230b0e1a'%3EC%3C/text%3E%3C/svg%3E">
 
     <!-- Haupt-Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -30,194 +30,208 @@
 </head>
 <body>
     <!-- Hinweis, falls JavaScript deaktiviert ist -->
-    <noscript>Bitte aktiviere JavaScript, um alle Funktionen dieser Seite zu nutzen.</noscript>
+    <noscript>Please enable JavaScript to use all features of this file sharing application.</noscript>
 
     <!-- Kopfbereich mit Navigation -->
     <header class="site-header" id="site-header">
         <div class="container header-inner">
             <!-- Marke; Klick führt nach oben -->
-            <a class="brand" href="#start" aria-label="Startseite">
-                <span class="logo">Rev</span><span class="brand-rest">Restaurant</span>
+            <a class="brand" href="#start" aria-label="Home">
+                <span class="logo">Cloud</span><span class="brand-rest">Share</span>
             </a>
 
             <!-- Hauptnavigation -->
-            <nav class="main-nav" aria-label="Hauptnavigation">
-                <a href="#menu">Menü</a>
-                <a href="#bestellen">Bestellen</a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <a href="#files">My Files</a>
+                <a href="#upload">Upload</a>
+                <a href="#share">Share</a>
             </nav>
         </div>
     </header>
 
     <main id="start">
-        <!-- Einstiegsbereich mit Bild und Handlungsaufrufen -->
+        <!-- Hero section with file upload area -->
         <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
-                    <h1>Frisch. Lecker. Direkt zu dir.</h1>
-                    <p>Entdecke unsere beliebtesten Gerichte – liebevoll zubereitet und schnell geliefert.</p>
+                    <h1>Simple. Secure. Shareable.</h1>
+                    <p>Upload, organize, and share your files with ease. Experience cloud storage with a beautiful, intuitive interface.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="#bestellen">Jetzt bestellen</a>
-                        <a class="btn btn-ghost" href="#menu">Speisekarte ansehen</a>
+                        <a class="btn btn-primary" href="#upload">Upload Files</a>
+                        <a class="btn btn-ghost" href="#files">Browse Files</a>
                     </div>
                 </div>
 
-                <!-- Bild des Gerichts; passt sich an die Bildschirmgröße an -->
+                <!-- File upload drop zone -->
                 <div class="hero-visual reveal">
-                    <img
-                        class="hero-image"
-                        src="https://tse1.mm.bing.net/th/id/OIP.tzui4_ZqXtkyb3peLmelPgHaKe?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Frisch gebackene Pizza als Appetizer"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                    >
+                    <div class="upload-zone" id="uploadZone">
+                        <div class="upload-content">
+                            <div class="upload-icon">📁</div>
+                            <h3>Drag & drop files here</h3>
+                            <p>or click to browse</p>
+                            <input type="file" id="fileInput" multiple hidden>
+                        </div>
+                        <div class="upload-progress" id="uploadProgress" style="display: none;">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <p id="uploadStatus">Uploading...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Speisekarte mit Kartenlayout -->
-        <section id="menu" class="section">
+        <!-- File management section -->
+        <section id="files" class="section">
             <div class="container">
-                <h2 class="section-title reveal">Unsere Speisekarte</h2>
-
-                <!-- Raster für Speisekarten -->
-                <ul class="menu-grid" role="list">
-                    <li class="menu-card reveal">
-                        <div class="menu-card-inner">
-                            <h3>Pizza Margherita</h3>
-                            <p class="desc">Tomatensauce, Mozzarella, Basilikum – der zeitlose Klassiker.</p>
-                            <span class="price" aria-label="Preis 8 Euro 50">
-                                <data value="8.5">8,50 €</data>
-                            </span>
+                <div class="section-header">
+                    <h2 class="section-title reveal">Your Files</h2>
+                    <div class="file-controls reveal">
+                        <button class="btn btn-ghost" id="createFolderBtn">Create Folder</button>
+                        <div class="view-toggle">
+                            <button class="view-btn active" id="gridViewBtn" data-view="grid">Grid</button>
+                            <button class="view-btn" id="listViewBtn" data-view="list">List</button>
                         </div>
-                    </li>
+                    </div>
+                </div>
 
-                    <li class="menu-card reveal">
-                        <div class="menu-card-inner">
-                            <h3>Spaghetti Bolognese</h3>
-                            <p class="desc">Hausgemachte Fleischsauce nach Familienrezept.</p>
-                            <span class="price" aria-label="Preis 9 Euro 00">
-                                <data value="9.0">9,00 €</data>
-                            </span>
-                        </div>
-                    </li>
+                <!-- Current path breadcrumb -->
+                <div class="breadcrumb reveal" id="breadcrumb">
+                    <a href="#" data-path="">Home</a>
+                </div>
 
-                    <li class="menu-card reveal">
-                        <div class="menu-card-inner">
-                            <h3>Caesar Salat</h3>
-                            <p class="desc">Knackiger Römersalat mit Parmesan und Croûtons.</p>
-                            <span class="price" aria-label="Preis 7 Euro 00">
-                                <data value="7.0">7,00 €</data>
-                            </span>
+                <!-- File grid/list -->
+                <div class="file-container" id="fileContainer">
+                    <div class="files-grid" id="filesGrid">
+                        <!-- Files will be populated by JavaScript -->
+                        <div class="empty-state" id="emptyState">
+                            <div class="empty-icon">📂</div>
+                            <h3>No files yet</h3>
+                            <p>Upload your first file to get started</p>
                         </div>
-                    </li>
-
-                    <li class="menu-card reveal">
-                        <div class="menu-card-inner">
-                            <h3>Tiramisu</h3>
-                            <p class="desc">Cremiges Dessert mit Espresso und Kakao.</p>
-                            <span class="price" aria-label="Preis 4 Euro 50">
-                                <data value="4.5">4,50 €</data>
-                            </span>
-                        </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Bestellformular -->
-        <section id="bestellen" class="section section-alt">
+        <!-- Upload section -->
+        <section id="upload" class="section section-alt">
             <div class="container">
-                <h2 class="section-title reveal">Bestellung senden</h2>
+                <h2 class="section-title reveal">Upload Files</h2>
                 <p class="section-lead reveal">
-                    Jetzt unsere beliebtesten Gerichte genießen – frisch, lecker und direkt zu dir geliefert!
-                    Bestelle noch heute und erlebe echten Genuss.
+                    Choose files from your device to upload to your cloud storage. All files are stored locally for this demo.
                 </p>
 
-                <!-- Formular; Validierung über den Browser -->
-                <form id="bestellformular" class="form reveal" action="#" method="post" novalidate>
-                    <!-- Name -->
-                    <div class="form-field">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
-                    </div>
-
-                    <!-- Adresse -->
-                    <div class="form-field">
-                        <label for="address">Adresse</label>
-                        <input type="text" id="address" name="address" placeholder="Musterstraße 1, 12345 Musterstadt" required>
-                    </div>
-
-                    <!-- Telefon -->
-                    <div class="form-field">
-                        <label for="phone">Telefonnummer</label>
-                        <!-- Erlaubt typische Zeichen für Telefonnummern -->
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="+49 170 1234567"
-                            pattern="^[0-9 +()\/\-]{6,}$"
-                            required
-                        >
-                        <small class="hint">Nur Ziffern und + ( ) / - sind erlaubt.</small>
-                    </div>
-
-                    <!-- Bestellnummer -->
-                    <div class="form-field">
-                        <label for="orderNumber">Bestellnummer</label>
-                        <input
-                            type="number"
-                            id="orderNumber"
-                            name="orderNumber"
-                            min="45"
-                            max="60"
-                            step="1"
-                            placeholder="z. B. 52"
-                            aria-describedby="orderNumberError"
-                            required
-                        >
-                        <small class="hint">Erlaubter Bereich: 45 bis 60.</small>
-                        <small id="orderNumberError" class="error-text" role="alert" aria-live="polite"></small>
-                    </div>
-
-                    <!-- Lieferoptionen -->
-                    <fieldset class="form-field">
-                        <legend>Lieferoptionen</legend>
-                        <div class="radio-group">
-                            <label class="radio">
-                                <input type="radio" id="delivery" name="deliveryOption" value="Lieferung" required>
-                                <span>Lieferung</span>
-                            </label>
-                            <label class="radio">
-                                <input type="radio" id="pickup" name="deliveryOption" value="Abholung" required>
-                                <span>Abholung</span>
+                <!-- Advanced upload form -->
+                <div class="upload-form reveal">
+                    <div class="form-section">
+                        <h3>File Selection</h3>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="advancedFileInput" multiple>
+                            <label for="advancedFileInput" class="file-input-label">
+                                Choose Files
+                                <span class="file-count" id="fileCount">No files selected</span>
                             </label>
                         </div>
-                    </fieldset>
-
-                    <!-- Extrawünsche -->
-                    <div class="form-field form-field--full">
-                        <label for="notes">Extrawünsche</label>
-                        <textarea id="notes" name="notes" rows="4" placeholder="Allergien, ohne Zwiebeln, extra Käse …"></textarea>
                     </div>
 
-                    <!-- Absenden -->
+                    <div class="form-section">
+                        <h3>Upload Options</h3>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="uploadFolder">Destination Folder</label>
+                                <select id="uploadFolder">
+                                    <option value="">Root Folder</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>
+                                    <input type="checkbox" id="generateLinks">
+                                    Generate shareable links automatically
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary" id="submitBtn">Bestellung absenden</button>
+                        <button type="button" class="btn btn-primary" id="startUploadBtn">Start Upload</button>
+                        <button type="button" class="btn btn-ghost" id="clearSelectionBtn">Clear Selection</button>
                     </div>
-                </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Share section -->
+        <section id="share" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">Share Files</h2>
+                <p class="section-lead reveal">
+                    Generate secure links to share your files with others. Links can be copied and shared via email, messaging, or social media.
+                </p>
+
+                <!-- Sharing interface -->
+                <div class="sharing-interface reveal">
+                    <div class="share-file-selector">
+                        <h3>Select File to Share</h3>
+                        <div class="shareable-files" id="shareableFiles">
+                            <!-- Files available for sharing will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="share-links" id="shareLinks" style="display: none;">
+                        <h3>Share Links</h3>
+                        <div class="share-link-item">
+                            <label>Direct Download Link:</label>
+                            <div class="link-container">
+                                <input type="text" id="downloadLink" readonly>
+                                <button class="btn btn-ghost copy-btn" data-target="downloadLink">Copy</button>
+                            </div>
+                        </div>
+                        <div class="share-link-item">
+                            <label>Preview Link:</label>
+                            <div class="link-container">
+                                <input type="text" id="previewLink" readonly>
+                                <button class="btn btn-ghost copy-btn" data-target="previewLink">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Benachrichtigungsbereich für Bestätigungen -->
+    <!-- File context menu -->
+    <div class="context-menu" id="contextMenu" style="display: none;">
+        <button class="context-item" id="downloadFile">Download</button>
+        <button class="context-item" id="shareFile">Share</button>
+        <button class="context-item" id="renameFile">Rename</button>
+        <button class="context-item" id="deleteFile">Delete</button>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="modalOverlay" style="display: none;">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Title</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+            <div class="modal-actions" id="modalActions">
+                <!-- Modal actions will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
     <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <!-- Fußbereich -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>Made with love by. @SkyTheOne</p>
+            <p>Made with love by @SkyTheOne</p>
         </div>
     </footer>
 </body>
