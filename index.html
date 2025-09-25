@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <!-- Basis-Setup für Zeichensatz und responsives Layout -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Kurze Seitenbeschreibung für Suchmaschinen -->
-    <meta name="description" content="Frische, leckere Gerichte – schnell geliefert. Entdecke unsere Speisekarte und bestelle direkt online.">
+    <meta name="description" content="Secure file sharing made simple. Upload, organize, and share files with elegant cloud-style interface.">
 
     <!-- Farbe für Browser-UI auf Mobilgeräten -->
     <meta name="theme-color" content="#0f1221">
 
     <!-- Titel der Seite im Browser-Tab -->
-    <title>Rev-Web – Revolutioniere dein Web-Erlebnis</title>
+    <title>CloudShare – Elegant File Sharing</title>
 
     <!-- Schriftarten laden -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Favicon (Platzhalter, kann ersetzt werden) -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5c5c'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' fill='%230b0e1a'%3ER%3C/text%3E%3C/svg%3E">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5c5c'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28' font-family='Arial' fill='%230b0e1a'%3EC%3C/text%3E%3C/svg%3E">
 
     <!-- Haupt-Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -30,194 +30,263 @@
 </head>
 <body>
     <!-- Hinweis, falls JavaScript deaktiviert ist -->
-    <noscript>Bitte aktiviere JavaScript, um alle Funktionen dieser Seite zu nutzen.</noscript>
+    <noscript>Please enable JavaScript for full functionality.</noscript>
 
     <!-- Kopfbereich mit Navigation -->
     <header class="site-header" id="site-header">
         <div class="container header-inner">
             <!-- Marke; Klick führt nach oben -->
-            <a class="brand" href="#start" aria-label="Startseite">
-                <span class="logo">Rev</span><span class="brand-rest">Restaurant</span>
+            <a class="brand" href="#start" aria-label="Home">
+                <span class="logo">Cloud</span><span class="brand-rest">Share</span>
             </a>
 
             <!-- Hauptnavigation -->
-            <nav class="main-nav" aria-label="Hauptnavigation">
-                <a href="#menu">Menü</a>
-                <a href="#bestellen">Bestellen</a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#files">My Files</a>
+                <a href="#upload">Upload</a>
+                <a href="#shared">Shared</a>
             </nav>
         </div>
     </header>
 
     <main id="start">
-        <!-- Einstiegsbereich mit Bild und Handlungsaufrufen -->
+        <!-- Hero Section -->
         <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
-                    <h1>Frisch. Lecker. Direkt zu dir.</h1>
-                    <p>Entdecke unsere beliebtesten Gerichte – liebevoll zubereitet und schnell geliefert.</p>
+                    <h1>File Sharing Made Simple</h1>
+                    <p>Upload, organize, and share your files with an elegant cloud-style interface. Secure, fast, and beautifully designed.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="#bestellen">Jetzt bestellen</a>
-                        <a class="btn btn-ghost" href="#menu">Speisekarte ansehen</a>
+                        <a class="btn btn-primary" href="#upload">Upload Files</a>
+                        <a class="btn btn-ghost" href="#files">Browse Files</a>
                     </div>
                 </div>
 
-                <!-- Bild des Gerichts; passt sich an die Bildschirmgröße an -->
+                <!-- Visual Element -->
                 <div class="hero-visual reveal">
-                    <img
-                        class="hero-image"
-                        src="https://tse1.mm.bing.net/th/id/OIP.tzui4_ZqXtkyb3peLmelPgHaKe?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Frisch gebackene Pizza als Appetizer"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                    >
+                    <div class="hero-icon">
+                        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Cloud icon -->
+                            <circle cx="100" cy="100" r="80" fill="var(--accent)" opacity="0.1"/>
+                            <path d="M150 90c0-27.6-22.4-50-50-50s-50 22.4-50 50c-16.6 0-30 13.4-30 30s13.4 30 30 30h90c19.3 0 35-15.7 35-35s-15.7-35-35-35" fill="var(--accent)" opacity="0.8"/>
+                            <path d="M85 110v30m0 0l-8-8m8 8l8-8" stroke="var(--bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M115 110v30m0 0l-8-8m8 8l8-8" stroke="var(--bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Speisekarte mit Kartenlayout -->
-        <section id="menu" class="section">
+        <!-- File Upload Section -->
+        <section id="upload" class="section">
             <div class="container">
-                <h2 class="section-title reveal">Unsere Speisekarte</h2>
-
-                <!-- Raster für Speisekarten -->
-                <ul class="menu-grid" role="list">
-                    <li class="menu-card reveal">
-                        <div class="menu-card-inner">
-                            <h3>Pizza Margherita</h3>
-                            <p class="desc">Tomatensauce, Mozzarella, Basilikum – der zeitlose Klassiker.</p>
-                            <span class="price" aria-label="Preis 8 Euro 50">
-                                <data value="8.5">8,50 €</data>
-                            </span>
-                        </div>
-                    </li>
-
-                    <li class="menu-card reveal">
-                        <div class="menu-card-inner">
-                            <h3>Spaghetti Bolognese</h3>
-                            <p class="desc">Hausgemachte Fleischsauce nach Familienrezept.</p>
-                            <span class="price" aria-label="Preis 9 Euro 00">
-                                <data value="9.0">9,00 €</data>
-                            </span>
-                        </div>
-                    </li>
-
-                    <li class="menu-card reveal">
-                        <div class="menu-card-inner">
-                            <h3>Caesar Salat</h3>
-                            <p class="desc">Knackiger Römersalat mit Parmesan und Croûtons.</p>
-                            <span class="price" aria-label="Preis 7 Euro 00">
-                                <data value="7.0">7,00 €</data>
-                            </span>
-                        </div>
-                    </li>
-
-                    <li class="menu-card reveal">
-                        <div class="menu-card-inner">
-                            <h3>Tiramisu</h3>
-                            <p class="desc">Cremiges Dessert mit Espresso und Kakao.</p>
-                            <span class="price" aria-label="Preis 4 Euro 50">
-                                <data value="4.5">4,50 €</data>
-                            </span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Bestellformular -->
-        <section id="bestellen" class="section section-alt">
-            <div class="container">
-                <h2 class="section-title reveal">Bestellung senden</h2>
+                <h2 class="section-title reveal">Upload Files</h2>
                 <p class="section-lead reveal">
-                    Jetzt unsere beliebtesten Gerichte genießen – frisch, lecker und direkt zu dir geliefert!
-                    Bestelle noch heute und erlebe echten Genuss.
+                    Drag and drop files or click to browse. All file types supported.
                 </p>
 
-                <!-- Formular; Validierung über den Browser -->
-                <form id="bestellformular" class="form reveal" action="#" method="post" novalidate>
-                    <!-- Name -->
-                    <div class="form-field">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
-                    </div>
-
-                    <!-- Adresse -->
-                    <div class="form-field">
-                        <label for="address">Adresse</label>
-                        <input type="text" id="address" name="address" placeholder="Musterstraße 1, 12345 Musterstadt" required>
-                    </div>
-
-                    <!-- Telefon -->
-                    <div class="form-field">
-                        <label for="phone">Telefonnummer</label>
-                        <!-- Erlaubt typische Zeichen für Telefonnummern -->
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="+49 170 1234567"
-                            pattern="^[0-9 +()\/\-]{6,}$"
-                            required
-                        >
-                        <small class="hint">Nur Ziffern und + ( ) / - sind erlaubt.</small>
-                    </div>
-
-                    <!-- Bestellnummer -->
-                    <div class="form-field">
-                        <label for="orderNumber">Bestellnummer</label>
-                        <input
-                            type="number"
-                            id="orderNumber"
-                            name="orderNumber"
-                            min="45"
-                            max="60"
-                            step="1"
-                            placeholder="z. B. 52"
-                            aria-describedby="orderNumberError"
-                            required
-                        >
-                        <small class="hint">Erlaubter Bereich: 45 bis 60.</small>
-                        <small id="orderNumberError" class="error-text" role="alert" aria-live="polite"></small>
-                    </div>
-
-                    <!-- Lieferoptionen -->
-                    <fieldset class="form-field">
-                        <legend>Lieferoptionen</legend>
-                        <div class="radio-group">
-                            <label class="radio">
-                                <input type="radio" id="delivery" name="deliveryOption" value="Lieferung" required>
-                                <span>Lieferung</span>
-                            </label>
-                            <label class="radio">
-                                <input type="radio" id="pickup" name="deliveryOption" value="Abholung" required>
-                                <span>Abholung</span>
-                            </label>
+                <!-- Upload Zone -->
+                <div class="upload-zone reveal" id="uploadZone">
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
-                    </fieldset>
-
-                    <!-- Extrawünsche -->
-                    <div class="form-field form-field--full">
-                        <label for="notes">Extrawünsche</label>
-                        <textarea id="notes" name="notes" rows="4" placeholder="Allergien, ohne Zwiebeln, extra Käse …"></textarea>
+                        <h3>Drop files here or click to browse</h3>
+                        <p>Support for all file types • Max 100MB per file</p>
+                        <input type="file" id="fileInput" multiple hidden>
+                        <button class="btn btn-ghost" onclick="document.getElementById('fileInput').click()">Choose Files</button>
                     </div>
+                </div>
 
-                    <!-- Absenden -->
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary" id="submitBtn">Bestellung absenden</button>
+                <!-- Upload Progress -->
+                <div class="upload-progress" id="uploadProgress" hidden>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
                     </div>
-                </form>
+                    <p class="progress-text" id="progressText">Uploading...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Manager Section -->
+        <section id="files" class="section section-alt">
+            <div class="container">
+                <div class="files-header">
+                    <h2 class="section-title reveal">My Files</h2>
+                    <div class="files-controls">
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z"/>
+                                </svg>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="sort-dropdown">
+                            <select id="sortSelect">
+                                <option value="name">Sort by Name</option>
+                                <option value="date">Sort by Date</option>
+                                <option value="size">Sort by Size</option>
+                                <option value="type">Sort by Type</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Breadcrumb Navigation -->
+                <nav class="breadcrumb reveal" id="breadcrumb">
+                    <button class="breadcrumb-item active" data-folder="root">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        Home
+                    </button>
+                </nav>
+
+                <!-- File Grid -->
+                <div class="file-grid reveal" id="fileGrid">
+                    <!-- Files will be dynamically inserted here -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12l2 2 4-4" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>No files yet</h3>
+                    <p>Upload your first file to get started</p>
+                    <a href="#upload" class="btn btn-primary">Upload Files</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shared Files Section -->
+        <section id="shared" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">Shared Links</h2>
+                <p class="section-lead reveal">
+                    Files you've shared with others and their access links.
+                </p>
+
+                <div class="shared-list reveal" id="sharedList">
+                    <!-- Shared files will be dynamically inserted here -->
+                </div>
+
+                <!-- Empty Shared State -->
+                <div class="empty-state" id="emptyShared">
+                    <div class="empty-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>No shared files</h3>
+                    <p>Share files to generate access links</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Benachrichtigungsbereich für Bestätigungen -->
-    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    <!-- File Preview Modal -->
+    <div class="modal" id="previewModal" hidden>
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">File Preview</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Preview content will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" onclick="downloadFile()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                    </svg>
+                    Download
+                </button>
+                <button class="btn btn-primary" onclick="shareFile()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                    Share
+                </button>
+            </div>
+        </div>
+    </div>
 
-    <!-- Fußbereich -->
+    <!-- Context Menu -->
+    <div class="context-menu" id="contextMenu" hidden>
+        <button class="context-item" onclick="previewFile()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+            </svg>
+            Preview
+        </button>
+        <button class="context-item" onclick="downloadFile()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Download
+        </button>
+        <button class="context-item" onclick="shareFile()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+            </svg>
+            Share
+        </button>
+        <hr class="context-divider">
+        <button class="context-item danger" onclick="deleteFile()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+            </svg>
+            Delete
+        </button>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="modal" id="shareModal" hidden>
+        <div class="modal-backdrop" onclick="closeShareModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Share File</h3>
+                <button class="modal-close" onclick="closeShareModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="share-link-container">
+                    <label for="shareLink">Share Link</label>
+                    <div class="share-link-input">
+                        <input type="text" id="shareLink" readonly>
+                        <button class="btn btn-ghost" onclick="copyShareLink()">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>Made with love by. @SkyTheOne</p>
+            <p>&copy; 2024 CloudShare. Made with ❤️ by @SkyTheOne</p>
         </div>
     </footer>
 </body>
